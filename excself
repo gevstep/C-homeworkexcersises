@@ -1,0 +1,128 @@
+using System;
+using System.Linq;
+
+namespace Lesson
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a number: ");
+            int input = int.Parse(Console.ReadLine());
+            Console.WriteLine("enter a clumn number: ");
+            int colum = int.Parse(Console.ReadLine());
+            int ok = colum;
+            for (int i = 0; i < colum ; i++)
+            {
+                for (int j = 0; j < ok; j++)
+                {
+                    Console.Write(input);
+                }
+                Console.WriteLine();
+                ok--;
+               
+            }
+
+
+        }
+    }
+}
+------------------------------------------------------------
+using System;
+using System.Globalization;
+using System.Linq;
+using System.Threading;
+
+namespace test
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            int[] myArray = { 1, 2, 3, 4, 5 };
+            int[] kent = new int[0];
+
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                if (myArray[i] % 2 != 0)
+                {
+                  kent =   kent.Concat(new int[] { myArray[i]}).ToArray();
+                }
+            }
+            for (int i = 0; i < kent.Length; i++)
+            {
+                Console.WriteLine(kent[i]);
+            }
+            Console.WriteLine(kent.Min());
+
+
+        }
+
+
+
+    }
+}
+------------------------------------------------------------------------
+Console.Write("INput number of elements:\t");
+            int element = int.Parse(Console.ReadLine());
+            int[] myArray = new int[element];
+
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                Console.Write("Input element:\t");
+                myArray[i] = int.Parse(Console.ReadLine());
+            }
+                for (int i = 0; i < myArray.Length ; i++)
+            {
+                Console.WriteLine(myArray[i]);
+            }
+
+
+-------------------------------------------------------------------------------			
+using System;
+using System.Globalization;
+using System.Linq;
+using System.Threading;
+
+namespace test
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            string[] name = new string[0];
+            string[] surname = new string[0];
+            int[] age = new int[0];
+            
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write("Enter your name: ");
+                name = name.Concat(new string [] { Console.ReadLine() }).ToArray();
+                Console.Write("Enter your surname: ");
+                surname = surname.Concat(new string[] { Console.ReadLine() }).ToArray();
+                Console.Write("Enter your age: ");
+                age = age.Concat(new int[] { int.Parse(Console.ReadLine()) }).ToArray();    
+
+            }
+            int min = age.Min();
+            for (int i = 0; i < age.Length; i++)
+            {
+                if (age[i] == min)
+                {
+                    Console.WriteLine("The youngest person is: ");
+                    Console.Write(name[i]+ " ");
+                    Console.Write(surname[i] + " ");
+                    Console.Write(age[i]);
+                }
+            }
+            
+        }
+
+
+
+    }
+}			
